@@ -1,0 +1,342 @@
+/* ── CSS Variables ── mirrors the :root pattern from the professor's grid example */
+:root {
+  --main-radius: 5px;
+  --main-padding: 10px;
+  --navy:   #060911;
+  --dark-orange: #723d00;
+  --purple: #6c5ce7;
+  --orange: #f0932b;   
+  --white:  #ffffff;
+  --light:  #f1f5f9;   
+  --muted:  #94a3b8;   
+  --danger: #e74c3c;
+  --success: #27ae60;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: var(--dark-orange);
+  padding: 5px 0;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: var(--white);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar .logo {
+  float: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 14px 16px;
+  color: var(--white);
+}
+
+.navbar a:hover {
+  background-color: var(--orange);
+  color: black;
+}
+
+ /* Auth */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-card {
+  background-color: var(--dark-orange);
+  padding: 40px;
+  border-radius: var(--main-radius);
+  width: 360px;
+}
+
+.auth-card h1 {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Form */
+label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--light);
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: var(--main-radius);
+  font-size: 1rem;
+}
+
+button[type="submit"],
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--orange);
+  color: black;
+  border: none;
+  border-radius: var(--main-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover,
+.btn:hover {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.auth-card p {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--light);
+}
+
+.auth-card a {
+  color: var(--orange);
+}
+
+/* Dashboard */
+#dashboard-container {
+  display: grid;
+  height: 100vh;
+
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.5rem;
+  padding: 0.5rem;
+
+  grid-template-areas:
+    "nav     nav"
+    "sidebar main"
+    "footer  footer";
+}
+
+/* Grid */
+#dash-nav {
+  grid-area: nav;
+  background-color: var(--dark-orange);
+  border-radius: var(--main-radius);
+  overflow: hidden;
+}
+
+#dash-sidebar {
+  grid-area: sidebar;
+  background-color: var(--dark-orange);
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+}
+
+#dash-main {
+  grid-area: main;
+  background-color: var(--light);
+  color: black;
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+  overflow-y: auto;
+}
+
+#dash-footer {
+  grid-area: footer;
+  background-color: var(--dark-orange);
+  border-radius: var(--main-radius);
+  padding: 8px var(--main-padding);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Side bar*/
+#dash-sidebar h2 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: var(--orange);
+  border-bottom: 1px solid var(--purple);
+  padding-bottom: 8px;
+}
+
+#dash-sidebar p {
+  font-size: 0.85rem;
+  color: var(--light);
+  line-height: 1.6;
+}
+
+/* Navbar */
+#dash-nav a {
+  float: right;
+  display: block;
+  color: var(--white);
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#dash-nav a:hover {
+  background-color: var(--orange);
+  color: black;
+}
+
+#dash-nav .logo {
+  float: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 14px 16px;
+  color: var(--white);
+}
+
+/* Panel Sections*/
+#dash-main h2 {
+  margin-bottom: 12px;
+  color: var(--dark-orange);
+}
+
+#dash-main hr {
+  border: none;
+  border-top: 1px solid #cbd5e1;
+  margin: 20px 0;
+}
+
+#dash-main input[type="text"],
+#dash-main input[type="date"] {
+  background-color: var(--white);
+  border: 1px solid #cbd5e1;
+  color: black;
+  margin-bottom: 10px;
+}
+
+#dash-main button[type="submit"] {
+  width: auto;
+  padding: 8px 20px;
+}
+
+/* events */
+#eventsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 12px;
+}
+
+.event-card {
+  background-color: var(--white);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--main-radius);
+  padding: 14px;
+}
+
+.event-card h3 {
+  color: var(--dark-orange);
+  margin-bottom: 6px;
+}
+
+.event-card p {
+  font-size: 0.85rem;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.event-card .card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-edit {
+  padding: 6px 12px;
+  background-color: var(--dark-orange);
+  color: var(--white);
+  border: none;
+  border-radius: var(--main-radius);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-edit:hover {
+  background-color: var(--purple);
+}
+
+.btn-delete {
+  padding: 6px 12px;
+  background-color: var(--danger);
+  color: var(--white);
+  border: none;
+  border-radius: var(--main-radius);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+#editSection {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--main-radius);
+  padding: 16px;
+  margin-top: 16px;
+}
+
+#editSection h2 {
+  margin-bottom: 12px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#saveEditBtn {
+  padding: 8px 20px;
+  background-color: var(--success);
+  color: var(--white);
+  border: none;
+  border-radius: var(--main-radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#saveEditBtn:hover {
+  background-color: #219a52;
+}
+
+#cancelEditBtn {
+  padding: 8px 20px;
+  background-color: var(--muted);
+  color: var(--white);
+  border: none;
+  border-radius: var(--main-radius);
+  cursor: pointer;
+}
+
+/* statuses */
+.msg-success { color: var(--success); font-size: 0.9rem; margin-top: 6px; }
+.msg-error   { color: var(--danger);  font-size: 0.9rem; margin-top: 6px; }

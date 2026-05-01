@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>SVSU Astro Club</title>
+</head>
+<body>
+
+  <div id="dashboard-container">
+    <div id="dash-nav">
+      <span class="logo"> Astro Club Admin</span>
+      <a id="logoutBtn">Logout</a>
+    </div>
+
+    <div id="dash-sidebar">
+      <h2>Admin Panel</h2>
+      <p>Manage upcoming events</p>
+    </div>
+
+
+    <div id="dash-main">
+
+      <h2>Create an Event</h2>
+      <form id="createEventForm">
+        <label>Title:</label>
+        <input type="text" id="newTitle" placeholder="ex: Open Observation Night" required>
+
+        <label>Description:</label>
+        <input type="text" id="newDescription" placeholder="Description of event" required>
+
+        <label>Date:</label>
+        <input type="date" id="newDate" required>
+
+        <label>Location:</label>
+        <input type="text" id="newLocation" placeholder="ex: SE 123" required>
+
+        <button type="submit">Add Event</button>
+      </form>
+      <p id="createMsg"></p>
+
+      <hr>
+
+
+      <h2>All Events</h2>
+      <div id="eventsList"></div>
+
+      <div id="editSection" style="display:none;">
+        <h2>Edit Event</h2>
+        <input type="hidden" id="editEventId">
+
+        <label>Title:</label>
+        <input type="text" id="editTitle">
+
+        <label>Description:</label>
+        <input type="text" id="editDescription">
+
+        <label>Date:</label>
+        <input type="date" id="editDate">
+
+        <label>Location:</label>
+        <input type="text" id="editLocation">
+
+        <div class="edit-actions">
+          <button id="saveEditBtn">Save</button>
+          <button id="cancelEditBtn">Cancel</button>
+        </div>
+        <p id="editMsg"></p>
+      </div>
+
+    </div>
+
+    <div id="dash-footer">
+      SVSU Astronomy Club &copy; 2025
+    </div>
+  </div>
+
+  <script src="js/notes.js"></script>
+</body>
+</html>
