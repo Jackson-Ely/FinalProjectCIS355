@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5555/api' // change to your Render URL before deploying
+const API_URL = 'https://finalprojectcis355.onrender.com/api'
 
 // register
 const registerForm = document.getElementById('registerForm')
